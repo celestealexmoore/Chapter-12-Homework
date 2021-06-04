@@ -10,9 +10,10 @@ const app = require('./index.js');
 //Create Connection
 const db = mysql.createConnection({
     host: '127.0.0.1',
+    port: 3306,
     user:'root',
     password: 'zokaisiafa7'
-})
+});
 
 db.connect(err => {
     if(err) throw err;
@@ -20,6 +21,8 @@ db.connect(err => {
         prompt();
 });
 
+
+// start of calls to the database:
 function prompt() {
     inquirer
     .prompt({
